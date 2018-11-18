@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Navtitle, NavMenu, NavMenuContainer, NavContainer } from '../styled-components/Navigation_Styles';
+import { Navbar, NavLogoTitleContainer, NavMenu, NavLogo, NavMenuContainer, NavContainer } from '../styled-components/Navigation_Styles';
 
 class Navigation extends React.Component {
   
@@ -36,18 +36,27 @@ class Navigation extends React.Component {
                     navbarGridTemplateColumns = { this.props.navbarGridTemplateColumns }
                     navbarJustifySelf = { this.props.navbarJustifySelf }
              >
-                <Navtitle 
-                    navTitleDisplay = { this.props.navTitleDisplay }
-                    navTitleJustifyContent = { this.props.navTitleJustifyContent }
+                <NavLogoTitleContainer 
+                    navLogoTitleContainerDisplay = { this.props.navLogoTitleContainerDisplay }
+                    navLogoTitleContainerJustifyContent = { this.props.navLogoTitleContainerJustifyContent }
+                    navLogoTitleContainerAlignItems = { this.props.navLogoTitleContainerAlignItems }
                     > 
-                    {this.props.title} 
-                </Navtitle>
+                    <div><NavLogo  
+                   navLogoWidth = { this.props.navLogoWidth } 
+                   navLogoMarginRight = { this.props.navLogoMarginRight }
+                   src = { this.props.logo} 
+                   alt = { this.props.logoAltText }
+                   /></div>
+                   <div>
+                        {this.props.title}
+                   </div>
+                </NavLogoTitleContainer>
                 <NavMenuContainer
-                navMenuContainerDisplay = { this.props.navMenuContainerDisplay }
-                navMenuContainerGridTemplateColumns = { this.props.navMenuContainerGridTemplateColumns }
-                navMenuContainerGridColumnEnd = { this.props.navMenuContainerGridColumnEnd }
+                    navMenuContainerDisplay = { this.props.navMenuContainerDisplay }
+                    navMenuContainerGridTemplateColumns = { this.props.navMenuContainerGridTemplateColumns }
+                    navMenuContainerGridColumnEnd = { this.props.navMenuContainerGridColumnEnd }
                 >
-                { menuItems }               
+                    { menuItems }               
                 </NavMenuContainer>
                 </Navbar>
              </NavContainer>

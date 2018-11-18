@@ -25,10 +25,16 @@ export const Navbar = styled.nav`
     justify-self: ${ props => props.navbarJustifySelf };
 `;
 
-export const Navtitle = styled.div `
-    display: ${ props => props.navTitleDisplay };
-    justify-content: ${ props => props.navTitleJustifyContent?props.navTitleJustifyContent:'flex-start'  };
-    margin: ${ props => props.navTitleMargin };
+export const NavLogo = styled.img `
+    width: ${ props => props.navLogoWidth };
+    margin-right: ${ props => props.navLogoMarginRight };
+`;
+
+export const NavLogoTitleContainer = styled.div `
+    display: ${ props => props.navLogoTitleContainerDisplay };
+    justify-content: ${ props => props.navLogoTitleContainerJustifyContent?props.navLogoTitleContainerJustifyContent:'flex-start'  };
+    align-items: ${ props => props.navLogoTitleContainerAlignItems };
+    margin: ${ props => props.navLogoTitleContainerMargin };
 `;
 
 export const NavMenuContainer = styled.div `
