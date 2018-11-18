@@ -1,25 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Navigation from './components/Navigation';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+       <Navigation
+       // Navbar Styles
+       title = 'Cup of Joe'
+       navColor = 'white'
+       navDisplay = 'grid'
+       navAlignItems = 'center'
+       navGridTemplateColumns = '1fr 1fr'
+       navJustifyContent = 'space-between'
+       navMargin = '0 16px'
+       navbarJustifySelf = 'center'
+       navBarWidth = '99vw'
+       // Nav Container Styles
+       navContainerJustifySelf = 'center'
+       navContainerDisplay = 'grid'
+       navContainerWidth = '100vw'
+       navContainerHeight = '60px'
+       navContainerBackgroundColor = 'black'
+      //  Nav Title Styles
+       navTitleDisplay = 'flex'
+       navTitleJustifyContent = 'flex-start'
+
+       // Nav Menu Styles
+       navMenuDislplay = 'flex'
+       navMenuJustifyContent = 'flex-end'
+       />
       </div>
     );
   }
