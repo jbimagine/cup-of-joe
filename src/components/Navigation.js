@@ -1,10 +1,20 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Navbar, Navtitle, NavMenu, NavContainer } from '../styled-components/Navigation_Styles';
+import { Navbar, Navtitle, NavMenu, NavMenuContainer, NavContainer } from '../styled-components/Navigation_Styles';
 
 class Navigation extends React.Component {
   
     render(){
+
+        const menuItems = this.props.navMenuItems.map( ( menuItem, index ) => (
+            <NavMenu key = {` ${menuItem.label}-${index}` }
+            navMenuDislplay = { this.props.navMenuDislplay }
+            navMenuJustifyContent = { this.props.navMenuJustifyContent }
+            navMenuPaddingRight = { this.props.navMenuPaddingRight }
+            navMenuLastPaddingRight = { this.props.navMenuLastPaddingRight }
+            >
+                { menuItem.label }
+            </NavMenu>
+            ));
 
 
         return(
@@ -16,27 +26,30 @@ class Navigation extends React.Component {
                 navContainerBackgroundColor = { this.props.navContainerBackgroundColor }
              >
                 <Navbar 
-                        navHeight = { this.props.navHeight }  
-                        navBarWidth = { this.props.navBarWidth }
-                        navBackgroundColor = { this.props.navBackgroundColor } 
-                        navColor = { this.props.navColor } 
-                        navDisplay = { this.props.navDisplay }
-                        navAlignItems = { this.props.navAlignItems }
-                        navGridTemplateColumns = { this.props.navGridTemplateColumns }
-                        navJustifyContent = { this.props.navJustifyContent }      
-                        navbarJustifySelf = { this.props.navbarJustifySelf }
-                        navContainerJustifySelf = { this.props.navbarJustifySelf }
+                    navbarHeight = { this.props.navbarHeight }  
+                    navbarWidth = { this.props.navbarWidth }
+                    navbarColor = { this.props.navbarColor } 
+                    navbarMargin = { this.props.navbarMargin }
+                    navbarDisplay = { this.props.navbarDisplay }
+                    navbarAlignItems = { this.props.navbarAlignItems }
+                    navbarBackgroundColor = { this.props.navbarBackgroundColor }
+                    navbarGridTemplateColumns = { this.props.navbarGridTemplateColumns }
+                    navbarJustifySelf = { this.props.navbarJustifySelf }
              >
-                        <Navtitle 
-                        navTitleDisplay = { this.props.navTitleDisplay }
-                        navTitleJustifyContent = { this.props.navTitleJustifyContent }
-                        > 
-                        {this.props.title} </Navtitle>
-                        <NavMenu
-                        navMenuDislplay = { this.props.navMenuDislplay }
-                        navMenuJustifyContent = { this.props.navMenuJustifyContent }
-                        > Container will be list of items </NavMenu>
-                    </Navbar>
+                <Navtitle 
+                    navTitleDisplay = { this.props.navTitleDisplay }
+                    navTitleJustifyContent = { this.props.navTitleJustifyContent }
+                    > 
+                    {this.props.title} 
+                </Navtitle>
+                <NavMenuContainer
+                navMenuContainerDisplay = { this.props.navMenuContainerDisplay }
+                navMenuContainerGridTemplateColumns = { this.props.navMenuContainerGridTemplateColumns }
+                navMenuContainerGridColumnEnd = { this.props.navMenuContainerGridColumnEnd }
+                >
+                { menuItems }               
+                </NavMenuContainer>
+                </Navbar>
              </NavContainer>
             </>
         )

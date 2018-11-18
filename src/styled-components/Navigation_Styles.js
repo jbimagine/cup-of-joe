@@ -11,27 +11,39 @@ export const NavContainer = styled.div `
 
 `;
 
-export const Navbar = styled.div`
-	width: ${ props => props.navBarWidth };
-    height: ${ props => props.navHeight };
-    background: ${ props => props.navBackgroundColor } ;
-    color: ${ props => props.navColor };
-    display: ${ props => props.navDisplay };
-    align-items: ${ props => props.navAlignItems };
-    grid-template-columns: ${ props => props.navGridTemplateColumns };
-    justify-content: ${ props => props.navJustifyContent };
-    padding: ${ props => props.navPadding };
-    margin: ${ props => props.navMargin };
+export const Navbar = styled.nav`
+	width: ${ props => props.navbarWidth };
+    height: ${ props => props.navbarHeight };
+    background: ${ props => props.navbarBackgroundColor } ;
+    color: ${ props => props.navbarColor };
+    display: ${ props => props.navbarDisplay };
+    align-items: ${ props => props.navbarAlignItems };
+    grid-template-columns: ${ props => props.navbarGridTemplateColumns };
+    justify-content: ${ props => props.navbarJustifyContent };
+    padding: ${ props => props.navbarPadding };
+    margin: ${ props => props.navbarMargin };
     justify-self: ${ props => props.navbarJustifySelf };
 `;
 
 export const Navtitle = styled.div `
     display: ${ props => props.navTitleDisplay };
     justify-content: ${ props => props.navTitleJustifyContent?props.navTitleJustifyContent:'flex-start'  };
+    margin: ${ props => props.navTitleMargin };
+`;
+
+export const NavMenuContainer = styled.div `
+    display: ${ props => props.navMenuContainerDisplay };
+    grid-template-columns: ${ props => props.navMenuContainerGridTemplateColumns };
+    grid-column-end: ${ props => props.navMenuContainerGridColumnEnd };
 `;
 
 export const NavMenu = styled.div `
     display: ${ props => props.navMenuDislplay };
+    cursor:pointer;
     justify-content: ${ props => props.navMenuJustifyContent?props.navMenuJustifyContent:'flex-start'  };
+    padding-right: ${ props => props.navMenuPaddingRight };
+    &:last-of-type {
+        padding-right: ${ props => props.navMenuLastPaddingRight }
+    }
 `;
 
