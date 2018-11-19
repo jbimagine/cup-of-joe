@@ -7,7 +7,13 @@ are easily  editable and changed
 import React, { Component } from 'react';
 import './App.css';
 import Navigation from './components/Navigation';
-import CoffeeMugSVG from './imgs/coffee_mug_icon.svg';
+import CoffeeMugSVG01 from './imgs/coffee_mug_icon_01.svg';
+import styled from 'styled-components';
+
+// Set the default font for the entire app
+const AppContainer = styled.div `
+  font-family: 'Quicksand', sans-serif;
+`
 
 class App extends Component {
   constructor(props){
@@ -29,11 +35,11 @@ class App extends Component {
   
   render() {
     return (
-      <div className="App">
+      <AppContainer className="App">
        <Navigation
        
         title = 'Cup of Joe' /* this is where we keep the title of the page */
-        logo = { CoffeeMugSVG }
+        logo = { CoffeeMugSVG01 }
         logoAltText = 'coffee mug'
         
         // Navigation Menu Items
@@ -58,10 +64,15 @@ class App extends Component {
         navLogoTitleContainerDisplay = 'flex' /* set the display */
         navLogoTitleContainerJustifyContent = 'flex-start' /* justify the content */
         navLogoTitleContainerAlignItems = 'center' /* align the items */
+        navLogoTitleContainerHeight = '60px'
 
         // Nav Logo Styles
-        navLogoWidth = '36px'
+        navLogoWidth = '48px'
         navLogoMarginRight = '12px'
+
+        // Nav Title Styles
+        navTitleFontSize = '24px'
+        navTitleFontWeight = '500'
 
         // Nav Menu Container Styles
         navMenuContainerDisplay = 'grid' /* set the display */
@@ -73,8 +84,10 @@ class App extends Component {
         navMenuJustifyContent = 'flex-end' /* justiyf the content */
         navMenuPaddingRight = '16px' /* set the padding right */
         navMenuLastPaddingRight = '0' /* set the last item's padding right */
+        navMenuAlignItems = 'center'
+        navMenuFontSize ='12px'
        />
-      </div>
+      </AppContainer>
     );
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, NavLogoTitleContainer, NavMenu, NavLogo, NavMenuContainer, NavContainer } from '../styled-components/Navigation_Styles';
+import { Navbar, NavTitle, NavLogoTitleContainer, NavMenu, NavLogo, NavMenuContainer, NavContainer } from '../styled-components/Navigation_Styles';
 
 class Navigation extends React.Component {
   
@@ -37,6 +37,7 @@ class Navigation extends React.Component {
                     navbarJustifySelf = { this.props.navbarJustifySelf }
              >
                 <NavLogoTitleContainer 
+                    navLogoTitleContainerHeight = { this.props.navLogoTitleContainerHeight }
                     navLogoTitleContainerDisplay = { this.props.navLogoTitleContainerDisplay }
                     navLogoTitleContainerJustifyContent = { this.props.navLogoTitleContainerJustifyContent }
                     navLogoTitleContainerAlignItems = { this.props.navLogoTitleContainerAlignItems }
@@ -48,13 +49,18 @@ class Navigation extends React.Component {
                    alt = { this.props.logoAltText }
                    /></div>
                    <div>
-                        {this.props.title}
+                        <NavTitle
+                        navTitleFontSize = { this.props.navTitleFontSize }
+                        navTitleFontWeight = { this.props.navTitleFontWeight }
+                        >{this.props.title}</NavTitle>
                    </div>
                 </NavLogoTitleContainer>
                 <NavMenuContainer
                     navMenuContainerDisplay = { this.props.navMenuContainerDisplay }
                     navMenuContainerGridTemplateColumns = { this.props.navMenuContainerGridTemplateColumns }
                     navMenuContainerGridColumnEnd = { this.props.navMenuContainerGridColumnEnd }
+                    navMenuAlignItems = { this.props.navMenuAlignItems }
+                    navMenuFontSize = { this.props.navMenuFontSize }
                 >
                     { menuItems }               
                 </NavMenuContainer>
